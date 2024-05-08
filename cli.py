@@ -3,7 +3,7 @@ import time
 
 now = time.strftime("%b %d, %Y %H:%M")
 print(now)
-
+FILEPATH = "todo-list\\todos.txt"
 
 while True:
     # get user input and strip space chars from it
@@ -17,7 +17,7 @@ while True:
         todos = get_todos()
         todos.append(todo)
                 
-        write_todos(filepath="python\\basicPY\\to_do_list\\todos.txt", todos_arg=todos)
+        write_todos(filepath=FILEPATH, todos_arg=todos)
                 
     
             
@@ -39,7 +39,7 @@ while True:
             new_todo = input("new todo: ") + "\n"
             todos.append(new_todo)
                 
-            write_todos(filepath="python\\basicPY\\to_do_list\\todos.txt", todos_arg=todos)
+            write_todos(filepath=FILEPATH, todos_arg=todos)
 
         except ValueError:
             print("Your command is not valid")
@@ -54,7 +54,7 @@ while True:
 
             todos.pop(number)
                 
-            write_todos(filepath="python\\basicPY\\to_do_list\\todos.txt", todos_arg=todos)
+            write_todos(filepath=FILEPATH, todos_arg=todos)
 
         except IndexError:
             print("theres no index with that number")
@@ -66,7 +66,7 @@ while True:
 
     elif user_action.startswith('clear'):
 
-        clear_todos("python\\basicPY\\to_do_list\\todos.txt")
+        clear_todos(FILEPATH)
     else:
          print("NO VALID")
     
