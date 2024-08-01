@@ -43,7 +43,8 @@ while True:
 
         case "Clear":
             functions.clear_todos()
-
+            cleared = functions.get_todos()
+            window['todos'].update(values=cleared)
         
         case sg.WIN_CLOSED:
             break
